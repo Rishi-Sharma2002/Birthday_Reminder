@@ -2,3 +2,6 @@ U2FsdGVkX1+SdyzQb4zEy6rv8QaRMW+yZ3qVnHmA3CQ=
 
 id = 1EOfLhXQAaAbGc9_Vxt1vHDPgzF44uClqOZba-mGN-jM
 calendarapi = AIzaSyB1tQOw6S9pp4ETDR50D0SaTY2s-XeAo4Q
+pushbulletapi = o.2oZ8cwzqJaRUSlU18oP8EEn0CpHGwyjS
+
+gspread : https://codingpub.dev/access-google-sheets-in-python-using-gspread/
