@@ -1,10 +1,7 @@
 import schedule
-import datetime
 import gspread
-import pandas as pd
-import re
-import subprocess
 from oauth2client.service_account import ServiceAccountCredentials
+import date
 
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('BirthdayReminder.json', scope)
@@ -27,7 +24,9 @@ sheet = client.open('Birthdays').sheet1
     # while True:
     #     schedule.run_pending()
     #     time.sleep(5)
-current_date = datetime.datetime.now()
-# current_date = current_date.read().decode("utf-8")
-current_date = re.search(rb'-\d\d-\d\d', current_date)
-print(current_date)
+
+print(date.current_date())
+for i in sheet.get_all_records():
+    if(i["Date"] == date.current_date()):
+        print("happy")
+    print(i)
