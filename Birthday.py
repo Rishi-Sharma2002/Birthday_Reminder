@@ -2,13 +2,14 @@ import schedule
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import date
+from Google import Create_Service
 
-scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('BirthdayReminder.json', scope)
+scopes = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/calendar']
+creds = ServiceAccountCredentials.from_json_keyfile_name('BirthdayReminder.json', scopes)
 client = gspread.authorize(creds)
 
 sheet = client.open('Birthdays').sheet1
-
+service = Create_Service(creds, 'calender', 'v3', scopes[2])
 # class Birthdays:
 #     def find_birthdays(self):
 #             for i in sheet.get_all_records():
